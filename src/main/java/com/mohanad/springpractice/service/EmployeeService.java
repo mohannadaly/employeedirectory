@@ -8,10 +8,11 @@ public interface EmployeeService {
     Employee create(Employee employee);
 
     List<Employee> findById(Integer id);
-
     List<Employee> findByFirstName(String name);
 
     List<Employee> findAll();
+
+    List<Employee> findAllByOrderByFirstNameAsc();
 
     Employee update(Integer id, Employee employee);
 

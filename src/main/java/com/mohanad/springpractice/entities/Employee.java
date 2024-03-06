@@ -1,9 +1,14 @@
 package com.mohanad.springpractice.entities;
 
+import com.mohanad.springpractice.validation.PhoneNumber;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -14,14 +19,22 @@ public class Employee {
     @Column(name = "ID")
     private Integer id;
     @Column(name = "first_name")
+    @NotNull
     private String firstName;
     @Column(name = "last_name")
+    @NotNull
     private String lastName;
     @Column(name = "email")
+    @NotNull
     private String email;
     @Column(name = "birthdate")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
     private Date birthDate;
     @Column(name = "phone_number")
+    @NotNull
+    @PhoneNumber
+    @Pattern(regexp = "^01[0-9]{9}", message = "Phone number must be 11 digits with no alphabets.")
     private String phoneNumber;
 
     public Employee() {
@@ -71,9 +84,8 @@ public class Employee {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        this.birthDate = formatter.parse(birthDate);
+    public void setBirthDate(Date birthDate) throws ParseException {
+        this.birthDate = birthDate;
     }
 
     public String getPhoneNumber() {

@@ -1,7 +1,7 @@
 
-# Employee Directory RESTful API
+# Employee Directory CRUD Application
 
-This a MAVEN project where I practice building RESTful API using Spring Boot 3.
+This a MAVEN project where I practice building RESTful API using Spring Boot 3. The project also includes a simple MVC app built using Spring MVC containing the basic CRUD operations
 
 
 # Database Connection
@@ -10,7 +10,7 @@ I'm using **MySQL** for the database and **JPA / Hibernate** for the ORM. I've i
 
 ## Security
 
-The endpoints are secured using **Spring Security** with custom table names for users, roles and authorities. Passwords as stored as plain-text pre-fixed with *{noop}* in the database. There are 3 main roles in the application: "EMPLOYEE", "MANAGER", and "ADMIN", each authorized access to different functionalities.
+The application is secured using **Spring Security** with custom table names for users, roles and authorities. Passwords as stored as plain-text pre-fixed with *{noop}* in the database. There are 3 main roles in the application: "EMPLOYEE", "MANAGER", and "ADMIN", each authorized access to different functionalities.
 
 ## Entities
 

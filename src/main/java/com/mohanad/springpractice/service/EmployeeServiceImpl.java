@@ -42,6 +42,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public List<Employee> findAllByOrderByFirstNameAsc() {
+        return employeeRepository.findAllByOrderByFirstNameAsc();
+    }
+
+    @Override
     public Employee update(Integer id, Employee employee) {
         findById(id);
         employee.setId(id);
