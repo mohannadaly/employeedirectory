@@ -33,8 +33,8 @@
             <td th:text="${employee.birthDate}"></td>
             <td th:text="${employee.phoneNumber}"></td>
             <td>
-                <a th:href="@{/employees/delete(id=${employee.id})}" class="btn btn-danger">Delete</a>
-                <a th:href="@{/employees/update(id=${employee.id})}" class="btn btn-secondary">Update</a>
+                <a th:href="@{/employees/update(id=${employee.id})}" class="btn btn-info btn-sm">Update</a>
+                <a th:href="@{/employees/delete(id=${employee.id})}" class="btn btn-danger btn-sm" onclick="if(!confirm('Are you sure you want to delete this employee?')) return false">Delete</a>
             </td>
         </tr>
         </tbody>
