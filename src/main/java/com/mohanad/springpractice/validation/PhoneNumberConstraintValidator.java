@@ -8,7 +8,7 @@ public class PhoneNumberConstraintValidator implements ConstraintValidator<Phone
 
     @Override
     public void initialize(PhoneNumber constraintAnnotation) {
-        val = constraintAnnotation.startsWith();
+        val = constraintAnnotation.value();
     }
 
     @Override

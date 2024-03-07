@@ -25,7 +25,7 @@ public class EmployeeCrudController {
         return "employee-create";
     }
 
-    @GetMapping("list")
+    @GetMapping
     public String listEmployees(Model model) {
         model.addAttribute("employees", employeeService.findAll());
         return "employees-list";
@@ -48,7 +48,7 @@ public class EmployeeCrudController {
         if (!bindingResult.hasErrors()) {
             employeeService.create(newEmployee);
         }
-        return "redirect:/employees/list";
+        return "redirect:/employees";
     }
 
     @PutMapping
@@ -60,12 +60,12 @@ public class EmployeeCrudController {
         if (!bindingResult.hasErrors()) {
             employeeService.update(id, newEmployee);
         }
-        return "redirect:/employees/list";
+        return "redirect:/employees";
     }
 
     @GetMapping("delete")
     public String deleteEmployee(@RequestParam Integer id) {
         employeeService.delete(id);
-        return "redirect:/employees/list";
+        return "redirect:/employees";
     }
 }
