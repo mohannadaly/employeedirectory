@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .login {
             padding: 20px;
             border-radius: 10px;
@@ -34,6 +35,10 @@
 
 <div class="login">
     <h3>Login</h3>
+    <div style="font-style: italic; font-size: 16px;">
+        <span style="color: red;" th:if="${param.error}">Incorrect username or password</span>
+        <span th:if="${param.logout}">You've been logged out.</span>
+    </div>
     <form th:action="@{/processLogin}" th:method="POST">
         <label>
             Username
