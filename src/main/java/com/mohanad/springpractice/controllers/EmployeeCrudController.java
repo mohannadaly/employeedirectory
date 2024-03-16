@@ -1,4 +1,4 @@
-package com.mohanad.springpractice.controller;
+package com.mohanad.springpractice.controllers;
 
 import com.mohanad.springpractice.entities.Employee;
 import com.mohanad.springpractice.service.EmployeeService;

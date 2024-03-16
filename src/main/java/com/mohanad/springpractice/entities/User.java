@@ -8,7 +8,6 @@ import java.util.Collection;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Integer id;
     @Column(name = "username")
@@ -24,19 +23,6 @@ public class User {
     private Collection<Role> roles;
 
     public User() {
-    }
-
-    public User(String username, String password, Boolean enabled) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-    }
-
-    public User(String username, String password, Boolean enabled, Collection<Role> roles) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-        this.roles = roles;
     }
 
     public Integer getId() {

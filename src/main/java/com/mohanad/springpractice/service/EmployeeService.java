@@ -9,6 +9,7 @@ public interface EmployeeService {
 
     List<Employee> findById(Integer id);
     List<Employee> findByFirstName(String name);
+    List<Employee> findByEmail(String email);
 
     List<Employee> findAll();
 

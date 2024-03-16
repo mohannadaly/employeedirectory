@@ -27,13 +27,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findById(Integer id) {
         Optional<Employee> employee = employeeRepository.findById(id);
-        if (employee.isPresent()) return List.of(employee.get());
-        throw new EmployeeNotFoundException("Employee with id: " + id + " not found.");
+        return employee.map(List::of).orElseGet(List::of);
+        //        throw new EmployeeNotFoundException("Employee with id: " + id + " not found.");
     }
 
     @Override
     public List<Employee> findByFirstName(String name) {
         return employeeRepository.findByFirstName(name);
+    }
+
+    @Override
+    public List<Employee> findByEmail(String email) {
+        return employeeRepository.findByEmail(email);
     }
 
     @Override

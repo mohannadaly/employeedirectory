@@ -16,7 +16,7 @@ import java.util.Date;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Integer id;
     @Column(name = "first_name")
     @NotNull
@@ -38,14 +38,6 @@ public class Employee {
     private String phoneNumber;
 
     public Employee() {
-    }
-
-    public Employee(String firstName, String lastName, String email, Date birthDate, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.birthDate = birthDate;
-        this.phoneNumber = phoneNumber;
     }
 
     public Integer getId() {
@@ -104,7 +96,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", birthDate=" + birthDate +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", phoneNumber='" + phoneNumber +
                 '}';
     }
 }

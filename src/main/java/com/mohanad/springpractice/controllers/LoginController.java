@@ -1,4 +1,4 @@
-package com.mohanad.springpractice.controller;
+package com.mohanad.springpractice.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
